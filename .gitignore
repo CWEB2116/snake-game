@@ -46,7 +46,7 @@ Network Trash Folder
 Temporary Items
 .apdisk
 
-node_modules
+#node_modules
 coverage
 *.css
 public/js/build.js

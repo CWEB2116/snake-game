@@ -1,10 +1,9 @@
 {
-  "name": "node-multiplayer-snake",
+  "name": "multiplayer-snake",
   "version": "1.0.3",
   "description": "A multiplayer snake game built on NodeJs, Express, socket.io, JavaScript ES6, and jspm.",
   "repository": {
     "type": "git"
-   
   },
   "scripts": {
     "start": "node app.js",
@@ -12,7 +11,6 @@
     "test": "mocha",
     "coverage": "istanbul cover node_modules/mocha/bin/_mocha",
     "sonar": "node sonar-project.js"
-    
   },
   "devDependencies": {
     "chai": "^3.5.0",
@@ -33,5 +31,7 @@
     "socket.io": "^1.4.6",
     "validator": "^5.4.0"
   },
-  "license": "MIT"
+  "license": "MIT",
+  "main": ".eslintrc.js",
+  "author": ""
 }
