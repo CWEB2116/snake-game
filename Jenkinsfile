@@ -1,7 +1,5 @@
 pipeline {
-    agent {
-        label "Jenkins-Agent"
-    }
+    agent any
     stages {
         stage('CLONE GIT REPOSITORY') {
             agent {
@@ -26,9 +24,7 @@ pipeline {
         }
  
         stage('SonarQube Analysis') {
-            agent {
-                label "Jenkins-Agent"
-            }
+            agent any
             steps {
                 script {
                     def scannerHome = tool 'Scanner'
@@ -42,9 +38,7 @@ pipeline {
         }
  
         stage('BUILD-AND-TAG') {
-            agent {
-                label "Jenkins-Agent"
-            }
+            agent any
             steps {
                 script {
                     def app = docker.build("ameliamae/sgameimg")
@@ -54,9 +48,7 @@ pipeline {
         }
  
         stage('POST-TO-DOCKERHUB') {    
-            agent {
-                label "Jenkins-Agent"
-            }
+            agent any
             steps {
                 script {
                     docker.withRegistry('https://registry.hub.docker.com', 'dockerhub_credentials') {
@@ -68,9 +60,7 @@ pipeline {
         }
  
         stage('DEPLOYMENT') {    
-            agent {
-                label 'ubuntu-us-appserver-2140-60'
-            }
+            agent any
             steps {
                 sh "docker-compose down"
                 sh "docker-compose up -d"   
