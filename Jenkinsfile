@@ -25,7 +25,7 @@ pipeline {
  
         stage('SonarQube Analysis') {
             agent {
-                label 'ubuntu-us-appserver-2140'
+                label "Jenkins-Agent"
             }
             steps {
                 script {
@@ -41,7 +41,7 @@ pipeline {
  
         stage('BUILD-AND-TAG') {
             agent {
-                label 'ubuntu-us-appserver-2140'
+                label "Jenkins-Agent"
             }
             steps {
                 script {
@@ -53,7 +53,7 @@ pipeline {
  
         stage('POST-TO-DOCKERHUB') {    
             agent {
-                label 'ubuntu-us-appserver-2140-60'
+                label "Jenkins-Agent"
             }
             steps {
                 script {
