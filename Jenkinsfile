@@ -1,5 +1,7 @@
 pipeline {
-    agent "Jenkins-Agent"
+    agent {
+        label "Jenkins-Agent"
+    }
     stages {
         stage('CLONE GIT REPOSITORY') {
             agent {
