@@ -2,9 +2,7 @@ pipeline {
     agent any
     stages {
         stage('CLONE GIT REPOSITORY') {
-            agent {
-                label 'ubuntu-us-appserver-2140'
-            }
+            agent any
             steps {
                 checkout scm
             }
