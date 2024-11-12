@@ -16,7 +16,7 @@ pipeline {
                 script {
                     snykSecurity(
                         snykInstallation: 'Snyk',
-                        snykTokenId: 'snyk_id',
+                        snykTokenId: 'Snyk_Token',
                         severity: 'critical'
                     )
                 }
