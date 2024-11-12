@@ -1,5 +1,5 @@
 pipeline {
-    agent Jenkins-Agent
+    agent "Jenkins-Agent"
     stages {
         stage('CLONE GIT REPOSITORY') {
             agent {
